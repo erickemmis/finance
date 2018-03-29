@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <h2>Portfolio</h2>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>{{net_worth | usd}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="active">
+        <th>Symbol</th>
+        <th>Company Name</th>
+        <th>Shares Owned</th>
+        <th>Current Price</th>
+        <th>Total Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--{% for stock in stocks %}
+      <tr>
+        <td>{{stock.symbol}}</td>
+        <td>{{stock.name}}</td>
+        <td>{{stock.total_shares}}</td>
+        <td>{{stock.price | usd}}</td>
+        <td>{{stock.value | usd}}</td>
+      </tr>
+      {% endfor %}-->
+      <tr class="active">
+        <td colspan="4">CASH</td>
+        <td>{{cash | usd}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+{% endblock %}
